@@ -21,7 +21,7 @@ sudo bash -c "cat >> /etc/apache2/conf.d/servername.conf <<EOF
 ServerName localhost
 EOF"
 
-WEBROOT="/vagrant/magento/public"
+WEBROOT="/vagrant/public"
 sudo echo "<VirtualHost *:80>
   DocumentRoot $WEBROOT
 
