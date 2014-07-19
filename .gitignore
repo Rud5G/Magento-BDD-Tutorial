@@ -1,3 +1,4 @@
 .vagrant
 public/var/session/
 public/var/cache/
+phantomjs-1.9.7-linux-i686/

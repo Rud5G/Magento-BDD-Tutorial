@@ -52,10 +52,11 @@ mysql -uroot -e 'CREATE DATABASE 'magento';'
 mysql -uroot magento < magento-sample-data-1.6.1.0/magento_sample_data_for_1.6.1.0.sql
 rm -rf magento-sample-data-1.6.1.0*
 
-php -f /vagrant/vendor/magetest/magento/src/install.php -- --license_agreement_accepted yes --locale en_GB --timezone Europe/London --default_currency GBP --db_host localhost --db_name magento --db_user root --db_pass "" --url http://bddmagento.dev/ --skip_url_validation yes --use_rewrites yes --use_secure no --secure_base_url --use_secure_admin no --admin_firstname admin --admin_lastname admin --admin_email admin@example.com --admin_username admin --admin_password password123123
+php -f /vagrant/public/install.php -- --license_agreement_accepted yes --locale en_GB --timezone Europe/London --default_currency GBP --db_host localhost --db_name magento --db_user root --db_pass "" --url http://bddmagento.dev/ --skip_url_validation yes --use_rewrites yes --use_secure no --secure_base_url --use_secure_admin no --admin_firstname admin --admin_lastname admin --admin_email admin@example.com --admin_username admin --admin_password password123123
 
+echo "Installing PhantomJS"
 cd /vagrant/tools
-wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-1.9.7-linux-i686.tar.bz2
+wget -O phantomjs-1.9.7-linux-i686.tar.bz2 https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-1.9.7-linux-i686.tar.bz2 2> /dev/null
 tar xvjf phantomjs-1.9.7-linux-i686.tar.bz2
 rm phantomjs-1.9.7-linux-i686.tar.bz2
 ./phantomjs-1.9.7-linux-i686/bin/phantomjs --webdriver=8643&
