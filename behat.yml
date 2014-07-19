@@ -13,7 +13,6 @@ default:
       selenium2:
         wd_host: http://10.1.1.1:4444/wd/hub
         browser: chrome
-        show_cmd: echo '%s'
 
 phantomjs:
   extensions:
