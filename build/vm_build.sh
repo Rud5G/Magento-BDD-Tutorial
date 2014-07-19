@@ -52,6 +52,8 @@ mysql -uroot -e 'CREATE DATABASE 'magento';'
 mysql -uroot magento < magento-sample-data-1.6.1.0/magento_sample_data_for_1.6.1.0.sql
 rm -rf magento-sample-data-1.6.1.0*
 
+php -f /vagrant/vendor/magetest/magento/src/install.php -- --license_agreement_accepted yes --locale en_GB --timezone Europe/London --default_currency GBP --db_host localhost --db_name magento --db_user root --db_pass "" --url http://bddmagento.dev/ --skip_url_validation yes --use_rewrites yes --use_secure no --secure_base_url --use_secure_admin no --admin_firstname admin --admin_lastname admin --admin_email admin@example.com --admin_username admin --admin_password password123123
+
 sudo bash -c "cat >> /etc/hosts <<EOF
 127.0.0.1 bddmagento.dev
 EOF"

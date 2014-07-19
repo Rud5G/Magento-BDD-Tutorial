@@ -1,2 +1,3 @@
 .vagrant
 public/var/session/
+public/var/cache/
