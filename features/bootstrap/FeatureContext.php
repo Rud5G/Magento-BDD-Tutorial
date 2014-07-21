@@ -16,6 +16,7 @@ class FeatureContext extends MagentoContext
      */
     public function productSkuHasAHighestPriceOfConfigured($sku, $highestPrice)
     {
+        \Mage::app()->setCurrentStore(\Mage_Core_Model_App::ADMIN_STORE_ID);
         $model = \Mage::getModel('catalog/product')->loadByAttribute('sku', $sku);
 
         if ($model->offsetExists('highest_online_price') == false) {
@@ -29,17 +30,23 @@ class FeatureContext extends MagentoContext
     /**
      * @When /^I am on page "([^"]*)"$/
      */
-    public function iAmOnPage($arg1)
+    public function iAmOnPage($url)
     {
-        throw new PendingException();
+        $this->getSession()->visit($this->locatePath($url));
     }
 
     /**
      * @Then /^I should see "([^"]*)"$/
      */
-    public function iShouldSee($arg1)
+    public function iShouldSee($text)
     {
-        throw new PendingException();
+        $page = $this->getSession()->getPage();
+
+        $el = $page->find('css', '.highest-online-price-title');
+        if ($el) {
+            expect($el->getText())->toBe($text);
+        }
+        throw new RuntimeException('Element not found on the page');
     }
 
     /**

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <BDDMagento_HighestPrice>
+            <active>true</active>
+            <codePool>local</codePool>
+        </BDDMagento_HighestPrice>
+    </modules>
+</config>

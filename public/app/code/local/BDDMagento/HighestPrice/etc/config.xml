@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <BDDMagento_HighestPrice>
+            <version>0.1.0</version>
+        </BDDMagento_HighestPrice>
+    </modules>
+    <global>
+        <models>
+            <bddmagento_highestprice>
+                <class>BDDMagento_HighestPrice_Model</class>
+                <resourceModel>bddmagento_highestprice_resource</resourceModel>
+            </bddmagento_highestprice>
+            <bddmagento_highestprice_resource>
+                <class>BDDMagento_HighestPrice_Model_Resource</class>
+            </bddmagento_highestprice_resource>
+        </models>
+        <blocks>
+            <bddmagento_highestprice>
+                <class>BDDMagento_HighestPrice_Block</class>
+            </bddmagento_highestprice>
+        </blocks>
+        <helpers>
+            <bddmagento_highestprice>
+                <class>BDDMagento_HighestPrice_Helper</class>
+            </bddmagento_highestprice>
+        </helpers>
+        <resources>
+            <bddmagento_highestprice_setup>
+                <setup>
+                    <module>BDDMagento_HighestPrice</module>
+                    <class>Mage_Catalog_Model_Resource_Eav_Mysql4_Setup</class>
+                </setup>
+            </bddmagento_highestprice_setup>
+        </resources>
+    </global>
+</config>
